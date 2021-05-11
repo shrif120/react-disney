@@ -24,39 +24,42 @@ export default function Trending(props) {
 }
 
 const Container = styled.div`
-  padding: 0px 0px 25px;
+  padding: 0px 0px 26px;
 `;
 const Content = styled.div`
   display: grid;
   grid-gap: 25px;
   gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding: 20px 0px;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 const Wrap = styled.div`
-  position: relative;
-  width: 250px;
-  height: 250px;
+  padding-top: 56.25%;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   border: 3px solid rgba(249, 249, 249, 0.1);
-  transition: all 0.2s;
+
   img {
-    width: 100%;
-    height: 100%;
     inset: 0px;
-    position: absolute;
-    opacity: 1;
     display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 500ms ease-in-out 0s;
+    width: 100%;
     z-index: 1;
     top: 0;
   }
+
   &:hover {
     box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
       rgb(0 0 0 / 72%) 0px 30px 22px -10px;
